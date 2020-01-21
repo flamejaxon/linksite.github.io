@@ -1,0 +1,15 @@
+//Adobe DTM Code
+function injectDTMScript() {
+	var adobeScript = document.createElement('script');
+	adobeScript.type = 'text/javascript';
+	adobeScript.async = true;
+	var url = window.location.href;
+	if(url.indexOf('?staging=1') != -1)
+		adobeScript.src = document.location.protocol + '//assets.adobedtm.com/launch-ENafd40a13942943df88b742d0513a4598-staging.min.js';
+	else
+		adobeScript.src = document.location.protocol + '//assets.adobedtm.com/launch-ENb306238987a34423be53c34e61ed5c68.min.js';
+	var s = document.getElementsByTagName('script');
+	var headID = document.getElementsByTagName('head')[0];
+	headID.appendChild(adobeScript);
+}
+injectDTMScript();
